@@ -1,0 +1,12 @@
+.home{
+    background-image: url('../../images/bg-iamge3.jpg');
+    background-size: cover;
+    height: 800px;
+    overflow-y: none;
+}
+.vehicles{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:5px;
+    margin: 200px auto;
+}

@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "vehicle":"Bike",
+        "cost":50,
+        "image":"https://i.ibb.co/ry6mJVs/bike.png"
+    },
+    {
+        "id":2,
+        "vehicle":"Car",
+        "cost":67,
+        "image":"https://i.ibb.co/5cxm3XT/car.png"
+    },
+    {
+        "id":3,
+        "vehicle":"Bus",
+        "cost":40,
+        "image":"https://i.ibb.co/XCKgWRf/bus.png"
+    },
+    {
+        "id":4,
+        "vehicle":"Train",
+        "cost":20,
+        "image":"https://i.ibb.co/QmF7JjN/train.png"
+    }
+]
