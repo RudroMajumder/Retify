@@ -9,6 +9,8 @@ import { createContext, useState } from 'react';
 import Login from "./components/Login/Login";
 import Contact from "./components/Contact/Contact";
 import Destination from "./components/Destination/Destination";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import DestinationConfirmation from "./components/DestinationConfirmation/DestinationConfirmation";
 
 export const UserContext = createContext();
 
@@ -27,10 +29,15 @@ const  [loggedInUser,setLoggedInUser] = useState({});
           <Route path="/contact">
             <Contact></Contact>
           </Route>
-          <Route path="/destination">
+          <PrivateRoute path="/destination/:vehicle/:id">
             <Destination></Destination>
+          </PrivateRoute>
+          <PrivateRoute path="/destination">
+            <Destination></Destination>
+          </PrivateRoute>
+          <Route path="/confirmation/:vehicle/:id">
+            <DestinationConfirmation></DestinationConfirmation>
           </Route>
-
           <Route exact path="/">
             <Home></Home>
           </Route>
