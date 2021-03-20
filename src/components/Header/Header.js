@@ -1,8 +1,13 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Nav, Navbar } from 'react-bootstrap-v5';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 import './Header.css'
 const Header = () => {
+
+  const [loggedInUser,setLoggedInUser] = useContext(UserContext);
+
 
     const navItemStyle={
         color: "white",
@@ -25,10 +30,13 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto" >
               <Link to="/home" style={navItemStyle}>  Home  </Link>
-              <Link to="/destination" style={navItemStyle}>  Destination </Link>
+              <Link to="/home" style={navItemStyle}>  Destination </Link>
               <Link to="/blog" style={navItemStyle}>  Blog  </Link>
               <Link to="/contact" style={navItemStyle}> Contact  </Link>
-              <Link to="/login"> <button className="login-btn" style={loginBtn}>  Login </button> </Link>
+              {
+                loggedInUser.email? <p style={navItemStyle}> {loggedInUser.email} </p>:
+                <Link to="/login"> <button className="login-btn" style={loginBtn}>  Login </button> </Link>
+              }
             </Nav>
           </Navbar.Collapse>
         </Navbar>

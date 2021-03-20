@@ -55,7 +55,7 @@ export const createUserWithEmailAndPassword = (name, email, password) => {
       const newUserInfo = res.user;
       newUserInfo.error = '';
       newUserInfo.success = true;
-    //   updateUserName(name);
+      updateUserName(name);
       return newUserInfo;
     })
     .catch( error => {
@@ -66,12 +66,13 @@ export const createUserWithEmailAndPassword = (name, email, password) => {
     });
  }
 
- export const signInWithEmailAndPassword = (email, password) =>{
+ export const signInWithEmailAndPassword = (name,email, password) =>{
     return firebase.auth().signInWithEmailAndPassword(email, password)
     .then(res => {
       const newUserInfo = res.user;
       newUserInfo.error = '';
       newUserInfo.success = true;
+      updateUserName(name);
       return newUserInfo;
     })
     .catch(function(error) {
@@ -81,3 +82,14 @@ export const createUserWithEmailAndPassword = (name, email, password) => {
       return newUserInfo;
     });
  }
+ const updateUserName = name =>{
+  const user = firebase.auth().currentUser;
+
+  user.updateProfile({
+    displayName: name
+  }).then(function() {
+    console.log('user name updated successfully')
+  }).catch(function(error) {
+    console.log(error)
+  });
+}

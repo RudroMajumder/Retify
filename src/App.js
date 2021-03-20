@@ -28,15 +28,15 @@ const  [loggedInUser,setLoggedInUser] = useState({});
           <Route path="/contact">
             <Contact></Contact>
           </Route>
-          <Route path="/destination/:vehicle/:id">
+          <PrivateRoute path="/destination/:vehicle/:id">
             <Destination></Destination>
-          </Route>
-          <Route path="/destination">
+          </PrivateRoute>
+          <PrivateRoute path="/destination">
             <Destination></Destination>
-          </Route>
-          <Route path="/confirmation/:vehicle/:id/:from/:destination">
+          </PrivateRoute>
+          <PrivateRoute path="/confirmation/:vehicle/:id/:from/:destination">
             <DestinationConfirmation></DestinationConfirmation>
-          </Route>
+          </PrivateRoute>
           <Route exact path="/">
             <Home></Home>
           </Route>

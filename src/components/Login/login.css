@@ -25,6 +25,10 @@
     color: white;
     font-size: 20px;
 }
+.buttons{
+
+    padding-bottom:150px;
+}
 .btn{
     width: 350px;
     height:40px;

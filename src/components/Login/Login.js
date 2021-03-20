@@ -30,6 +30,7 @@ const Login = () => {
     const [ newUser,setNewUser] = useState(false);
 
     loginFramework();
+    
     const handleResponse = (res, redirect) =>{
         setUser(res);
         setLoggedInUser(res);
@@ -69,7 +70,7 @@ const Login = () => {
         if(e.target.name === 'confirmPassword'){
             const confirmPassword = e.target.value;
             if(password!==confirmPassword){
-                console.log(password,confirmPassword,"passwords dont match")
+                console.log(password,confirmPassword,"passwords don't match")
                 setError("!!! Password don't match !!!");
             }
             else{
@@ -92,7 +93,7 @@ const Login = () => {
           }
       
           if(!newUser && user.email && user.password){
-            signInWithEmailAndPassword(user.email, user.password)
+            signInWithEmailAndPassword(user.name,user.email, user.password)
             .then(res => {
                 handleResponse(res, true);
                 console.log(res)
@@ -100,12 +101,12 @@ const Login = () => {
           }
         e.preventDefault();
     }
-
+// console.log(user.name)
     return (
         <div className="home">
             <Header></Header>
             <div className="form">
-                <h2 > Create an account </h2>
+                <h2 > {newUser?'Create an account':'Log in'} </h2>
                 <form onSubmit={handleSubmit}>
                     {newUser && <input type="text" name="name" onBlur={handleBlur} placeholder="Name" required/>}
                     <br/>
@@ -128,7 +129,7 @@ const Login = () => {
                 </p>
             </div>
             <p><span className="or"> Or </span></p>
-            <div className="text-center">
+            <div className="text-center buttons">
                 <button className="btn" onClick={fbSignIn}> <FaFacebook size={28}/> Continue in with Facebook </button>
                 <br/>
                 <button className="btn" onClick={googleSignIn}> <FaGoogle size={28}/> Continue in with Google </button>
