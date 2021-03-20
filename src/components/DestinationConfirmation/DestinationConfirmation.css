@@ -1,9 +1,13 @@
 .available{
     background-color:grey;
-    height:400px;
+    height:520px;
     border-radius:10px;
     padding:15px;
     width:400px;
+    margin: 0 auto;
+}
+.timeline{
+    background-color: orange;
 }
 .available-vehicles{
     background-color: white;
@@ -12,7 +16,7 @@
     margin-bottom: 10px;
     padding:5px;
 }
-@media screen and (max-width:960px){
+@media screen and (min-width:375px) and (max-width:720px){
     .home{
         height: 100%;
         width:100%;
@@ -22,10 +26,45 @@
         margin:0 auto;
     }
     .available{
-        width:400px;
+        width:365px;
     }
     .available-vehicles{
-        width:400px;
+        width:330px;
+        border-radius:5px;
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width:374px){
+    .home{
+        height: 100%;
+        width:100%;
+    }
+    .map{
+        width:100%;
+    }
+    .available{
+        width:300px;
+        padding: 10px;
+    }
+    .available-vehicles{
+        width:280px;
+        border-radius:5px;
+        margin-bottom: 10px;
+    }
+}
+@media screen and(min-width:721) and (max-width:959px){
+    .home{
+        height: 100%;
+        width:100%;
+    }
+    .map{
+        width:100%;
+    }
+    .available{
+        width:100%;
+    }
+    .available-vehicles{
+        width:370px;
         border-radius:5px;
         margin-bottom: 10px;
     }

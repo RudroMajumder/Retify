@@ -1,8 +1,7 @@
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Home from './components/Home/Home';
 import { createContext, useState } from 'react';
@@ -29,13 +28,13 @@ const  [loggedInUser,setLoggedInUser] = useState({});
           <Route path="/contact">
             <Contact></Contact>
           </Route>
-          <PrivateRoute path="/destination/:vehicle/:id">
+          <Route path="/destination/:vehicle/:id">
             <Destination></Destination>
-          </PrivateRoute>
-          <PrivateRoute path="/destination">
+          </Route>
+          <Route path="/destination">
             <Destination></Destination>
-          </PrivateRoute>
-          <Route path="/confirmation/:vehicle/:id">
+          </Route>
+          <Route path="/confirmation/:vehicle/:id/:from/:destination">
             <DestinationConfirmation></DestinationConfirmation>
           </Route>
           <Route exact path="/">

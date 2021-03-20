@@ -10,18 +10,20 @@ const Vehicle = (props) => {
       console.log(vehicle,'clicked')
     }
     return (
-    <Link to={"/destination/"+vehicle+"/"+id} style={{textDecoration:"none"}}>
+      <div>
+        <Link to={"/destination/"+vehicle+"/"+id} style={{textDecoration:"none"}}>
           <div onClick={handleClick}>
               <div className="container d-flex justify-content-center">
                 <div className="card w-75" >
                   <img src={image} className="card-img-top" alt="..."/>
                   <div className="card-body">
-                    <h4 className="card-text text-center">{vehicle}</h4>
+                    <h5 className="card-text text-center">{vehicle}</h5>
                   </div>
                 </div>
               </div>
           </div>
         </Link>
+      </div>
     );
 };
 

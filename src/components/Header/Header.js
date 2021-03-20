@@ -19,9 +19,9 @@ const Header = () => {
     }
     return (
       <div>
-        <Navbar bg="none" expand="lg">
+        <Navbar bg="transparent" expand="lg" variant="dark">
           <Link to="/home" className="brand"> Rentify  </Link>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle aria-controls="basic-navbar-nav" style={{color:"white"}} />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto" >
               <Link to="/home" style={navItemStyle}>  Home  </Link>

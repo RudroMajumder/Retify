@@ -12,7 +12,6 @@ const Home = () => {
     useEffect(()=>{
         setVehicles(fakedata);
     },[])
-    console.log(fakedata[3])
     return (
         <div className="home">
 
