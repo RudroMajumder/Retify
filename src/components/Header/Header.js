@@ -34,7 +34,7 @@ const Header = () => {
               <Link to="/blog" style={navItemStyle}>  Blog  </Link>
               <Link to="/contact" style={navItemStyle}> Contact  </Link>
               {
-                loggedInUser.email? <p style={navItemStyle}> {loggedInUser.email} </p>:
+                loggedInUser.email? <p style={navItemStyle}> {loggedInUser.name?loggedInUser.name:loggedInUser.email} </p>:
                 <Link to="/login"> <button className="login-btn" style={loginBtn}>  Login </button> </Link>
               }
             </Nav>

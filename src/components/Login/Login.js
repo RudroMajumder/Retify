@@ -81,6 +81,8 @@ const Login = () => {
             const newUserInfo = {...user};
             newUserInfo[e.target.name] = e.target.value;
             setUser(newUserInfo);
+            setLoggedInUser(newUserInfo)
+            console.log(newUserInfo)
         }
     }
     const handleSubmit = (e) =>{
@@ -95,20 +97,22 @@ const Login = () => {
           if(!newUser && user.email && user.password){
             signInWithEmailAndPassword(user.name,user.email, user.password)
             .then(res => {
-                handleResponse(res, true);
+                setUser(res);
+                setLoggedInUser(res);
+                history.push(from);
                 console.log(res)
             })
           }
         e.preventDefault();
     }
-// console.log(user.name)
+console.log("user:"+user.name+"loggedInUser:"+loggedInUser.name)
     return (
         <div className="home">
             <Header></Header>
             <div className="form">
                 <h2 > {newUser?'Create an account':'Log in'} </h2>
                 <form onSubmit={handleSubmit}>
-                    {newUser && <input type="text" name="name" onBlur={handleBlur} placeholder="Name" required/>}
+                    <input type="text" name="name" onBlur={handleBlur} placeholder="Name" />
                     <br/>
                     <input type="email" name="email" onBlur={handleBlur} placeholder="Email Address" required/>
                     <br/>

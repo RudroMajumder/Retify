@@ -1,6 +1,6 @@
 # Getting Started with Rentify
 
-This project is about [Rentify](https://rentify-fe6b7.web.app).
+This project is about [Rentify](https://rentify-fe6b7.web.app/).
 
 ## Available Scripts
 
